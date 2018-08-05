@@ -1,0 +1,8 @@
+<h2>Your Tag Id is: {{ userService.tagId }}</h2>
+
+<div>
+  <li *ngFor='let slot of userService.slotters, let i = index'>Slot Id : {{ i }}
+    <button *ngIf="!checkTagNull(slot['tagId'])">Reserved</button>
+    <button *ngIf="checkTagNull(slot['tagId'])" (click)="reserveSlot(i)">Reserve this Slot</button>
+  </li>
+</div>
